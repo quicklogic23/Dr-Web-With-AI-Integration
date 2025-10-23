@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6df3f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Zariya</title>
+</head>
+<style>
+  /* Chatbot Style */
+    .chatbot-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #4f46e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+  }
+.chatbot-btn:hover {
+    background-color: #4338ca;
+    transform: scale(1.05);
+  } 
+
+  .chatbot-btn svg {
+    color: white;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .chatbot-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4f46e5;
+    animation: chatbot-pulse 2s infinite;
+    z-index: 1;
+  }
+
+  @keyframes chatbot-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+<body>
+  <!-- Header -->
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Zariya</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-black">
+        <a href="Find Doctors.html" class="mr-5 cursor-pointer">Find Doctors</a>
+        <a class="mr-5">Hospitals</a>
+        <a class="mr-5">Join Us as Doctor</a>
+      </nav>
+      <button
+        class="inline-flex items-center bg-indigo-500 border border-indigo-400 text-white py-2 px-4 focus:outline-none hover:bg-white hover:text-indigo-500 hover:border-indigo-500 text-base mt-4 cursor-pointer transition-all duration-200">
+        Sign Up
+      </button>
+    </div>
+  </header>
+
+  <!-- Home -->
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-8 py-24 md:flex-row flex-col items-center"> <!-- px-8 for more side space -->
+      <div
+        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center pl-6">
+        <h1 class="title-font text-4xl mb-4 font-medium font-serif text-black">Find the Best Doctors Near You</h1>
+        <p class="mb-8 leading-relaxed text-gray-800 font-xl font-serif">Your Voice. Your Health. Your Doctor.</p>
+        <div class="flex w-full md:justify-start justify-center items-end search-container">
+          <div class="w-full max-w-xl relative">
+            <label for="doctor-search" class="block text-lg font-medium text-gray-800 mb-2">Search Doctors Here</label>
+            <div class="flex items-center border-b border-gray-400 pb-2">
+              <input
+                type="text"
+                id="doctor-search"
+                placeholder="Search by Dr Name"
+                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 px-2" />
+            <button id="voice-search-btn"  class="ml-3 flex items-center justify-center w-12 h-12 rounded-full border-[3px] border-indigo-500 text-indigo-500 hover:bg-indigo-50 cursor-pointer transition-all duration-200 shadow-sm" title="Voice Search">
+                 <i class="fa-solid fa-microphone text-xl"></i>
+            </button>
+              <button
+                id="search-btn"
+                class="ml-3 bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2 cursor-pointer transition-all duration-200">
+                Search
+              </button>
+            </div>
+            <div id="search-results" class="absolute bg-white border border-gray-200 rounded mt-2 w-full hidden"></div>
+          </div>
+        </div>
+        <div class="flex lg:flex-row md:flex-col mt-6">
+          <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
+              <path
+                d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM2 17l10 5 10-5M2 12l10 5 10-5z">
+              </path>
+            </svg>
+            <span class="ml-4 flex flex-col leading-none">
+              <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
+              <span class="title-font font-medium">Google Play</span>
+            </span>
+          </button>
+               <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
+            <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
+            <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
+          </svg>
+          <span class="ml-4 flex items-start flex-col leading-none">
+            <span class="text-xs text-gray-600 mb-1">Download on the</span>
+            <span class="title-font font-medium">App Store</span>
+          </span>
+        </button>
+        </div>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="Doctors Image.jpg">
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Features -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h2 class="text-2xl font-serif text-indigo-500 tracking-widest font-medium title-font mb-1">Our Features</h2>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 md:w-1/3">
+        <div class="flex h-full p-8 flex-col border border-black">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Ai Voice Assistant</h2>
+          </div>
+          <div class="flex-grow">
+            <p class="leading-relaxed text-base">Talk to Zariya – Your AI Voice Assistant for Healthcare.
+Ask health-related questions, find doctors, book appointments, and get clinic info – all by voice.
+Fast, hands-free, and available 24/7 to make your care experience simple and smart.</p>
+
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/3">
+        <div class="flex h-full p-8 flex-col border border-black">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Book Appointment</h2>
+          </div>
+          <div class="flex-grow">
+            <p class="leading-relaxed text-base">Easily Book Appointments with Just a Few Clicks.
+Choose your doctor, pick a time, and confirm your visit – all in seconds.
+No waiting, no hassle – Zariya puts your healthcare scheduling in your hands.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/3">
+        <div class="flex h-full p-8 flex-col border border-black">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+              </svg>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Consult with Doctor</h2>
+          </div>
+          <div class="flex-grow">
+            <p class="leading-relaxed text-base">Connect with Doctors for Quick, Reliable Consultations.
+Get expert medical advice through voice, chat, or scheduled sessions.
+Zariya makes it easy to consult the right doctor, anytime you need care.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="text-gray-600 body-font border-t border-gray-200">
+  <div class="container px-5 py-12 mx-auto flex flex-wrap items-start justify-between">
+    <div class="flex items-center mb-6 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl font-semibold text-gray-900">Zariya</span>
+    </div>
+    <div class="text-left">
+      <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Doctors</h2>
+      <nav class="list-none">
+        <li><a class="text-gray-600 hover:text-purple-600">Dermatologist</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Psychiatrist</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Gynecologist</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">General Practitioner</a></li>
+      </nav>
+    </div>
+    <div class="text-left">
+      <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Hospitals</h2>
+      <nav class="list-none">
+        <li><a class="text-gray-600 hover:text-purple-600">Mubarak Medical Complex</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Sadiq Hospital</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Niazi Medical Complex</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Faiz Memorial Hospital</a></li>
+      </nav>
+    </div>
+    <div class="text-left">
+      <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Blogs</h2>
+      <nav class="list-none text-sm">
+        <li><a class="text-gray-600 hover:text-purple-600">AI in Healthcare</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Virtual Doctor Visits</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Easy Booking Matters</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Voice Assistant Benefits</a></li>
+      </nav>
+    </div>
+    <div class="text-left">
+      <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Zariya</h2>
+      <nav class="list-none mb-3">
+        <li><a class="text-gray-600 hover:text-purple-600">Find Doctors</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Hospitals</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Our Blogs</a></li>
+        <li><a class="text-gray-600 hover:text-purple-600">Join Us as Doctors</a></li>
+      </nav>
+      <div class="flex space-x-4 mt-4">
+        <a class="text-gray-500 hover:text-purple-500">
+          <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+        <a class="text-gray-500 hover:text-purple-500">
+          <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5z"/>
+          </svg>
+        </a>
+        <a class="text-gray-500 hover:text-purple-500">
+          <svg fill="none" stroke="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-gray-300 mt-8">
+    <p class="text-center text-sm text-black py-4">
+      © 2025 Zariya | Built with 💜 by Team Zariya
+    </p>
+  </div>
+</footer>
+
+
+  <!-- Chatbot Button -->
+<button id="chatbot-btn" class="chatbot-btn" onclick="window.location.href='chatbot.html'">
+  <div class="chatbot-pulse"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+  </svg>
+</button>
+
+<!-- External Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

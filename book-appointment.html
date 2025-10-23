@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Appointment - Zariya</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<!-- Home Button -->
+<div class="p-4 bg-white border-b border-gray-200">
+    <a href="Find Doctors.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+        ← Back to Doctors
+    </a>
+</div>
+
+<div class="max-w-4xl mx-auto p-6">
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold mb-2 text-gray-800">Book Your Appointment</h1>
+        <p class="text-gray-600">Complete the form below to schedule your visit</p>
+    </div>
+
+    <!-- Messages -->
+    <div id="confirmationMessage" class="hidden bg-green-100 text-green-800 p-4 rounded mb-4 text-center">
+        ✅ Your appointment has been booked successfully! You will receive a confirmation email shortly.
+    </div>
+
+    <div id="errorMessage" class="hidden bg-red-100 text-red-800 p-4 rounded mb-4 text-center">
+        ❌ There was an error processing your appointment. Please try again.
+    </div>
+
+    <!-- AI Fill Button -->
+    <div class="text-center mb-4">
+        <button id="aiFillBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+            Fill Form with AI
+        </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <!-- Doctor Summary -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-600 pb-2">Doctor Information</h2>
+            <div class="flex items-start mb-4 pb-4 border-b border-gray-100">
+                <div id="doctorAvatar" class="w-20 h-20 rounded-full bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white text-2xl font-bold mr-4">DR</div>
+                <div class="flex-1">
+                    <h3 id="doctorName" class="text-xl font-semibold text-gray-800">Select a Doctor</h3>
+                    <div class="text-green-600 text-sm flex items-center">PMDC Verified</div>
+                    <p id="doctorSpecialty" class="text-blue-600 font-medium">Specialist</p>
+                    <p id="doctorQualifications" class="text-gray-600">Qualifications</p>
+                </div>
+            </div>
+            <div class="space-y-2 text-gray-700 text-sm">
+                <div><strong>Reviews:</strong> <span id="doctorReviews">0</span></div>
+                <div><strong>Experience:</strong> <span id="doctorExperience">0 years</span></div>
+                <div><strong>Satisfaction:</strong> <span id="doctorSatisfaction">0%</span></div>
+                <div><strong>Location:</strong> <span id="doctorLocation">Location not specified</span></div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-600 pb-2">Appointment Details</h2>
+
+            <!-- Appointment Summary -->
+            <div id="appointmentSummary" class="hidden bg-gray-100 p-4 rounded mb-4">
+                <h4 class="font-semibold mb-2">Appointment Summary:</h4>
+                <div><strong>Doctor:</strong> <span id="summaryDoctor"></span></div>
+                <div><strong>Date:</strong> <span id="summaryDate"></span></div>
+                <div><strong>Time:</strong> <span id="summaryTime"></span></div>
+            </div>
+
+            <form id="appointmentForm" class="space-y-4">
+                <div>
+                    <label for="patientName" class="block font-medium text-gray-700">Full Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="patientName" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="patientPhone" class="block font-medium text-gray-700">Phone Number <span class="text-red-500">*</span></label>
+                        <input type="tel" id="patientPhone" class="w-full p-2 border border-gray-300 rounded" placeholder="03XXXXXXXXX" required>
+                    </div>
+                    <div>
+                        <label for="patientEmail" class="block font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="patientEmail" class="w-full p-2 border border-gray-300 rounded" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="appointmentDate" class="block font-medium text-gray-700">Preferred Date <span class="text-red-500">*</span></label>
+                        <input type="date" id="appointmentDate" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div>
+                        <label for="appointmentTime" class="block font-medium text-gray-700">Preferred Time <span class="text-red-500">*</span></label>
+                        <select id="appointmentTime" class="w-full p-2 border border-gray-300 rounded" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="patientAge" class="block font-medium text-gray-700">Age</label>
+                    <input type="number" id="patientAge" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your age" min="1" max="120">
+                </div>
+
+                <div>
+                    <label for="patientGender" class="block font-medium text-gray-700">Gender</label>
+                    <select id="patientGender" class="w-full p-2 border border-gray-300 rounded">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="appointmentReason" class="block font-medium text-gray-700">Reason for Visit</label>
+                    <textarea id="appointmentReason" class="w-full p-2 border border-gray-300 rounded resize-y min-h-[100px]" placeholder="Please describe the reason for your visit..."></textarea>
+                </div>
+
+                <!-- Spinner -->
+                <div id="loadingSpinner" class="hidden text-center my-4">
+                    <div class="w-10 h-10 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin mx-auto"></div>
+                    <p class="mt-2 text-gray-600">Processing your appointment...</p>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white p-3 rounded font-semibold hover:bg-blue-700 transition">Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+let micPermissionGranted = false;
+
+// Request microphone permission once
+async function requestMicPermission() {
+    if(!micPermissionGranted) {
+        try {
+            await navigator.mediaDevices.getUserMedia({ audio: true });
+            micPermissionGranted = true;
+        } catch (err) {
+            alert("Microphone permission is required for AI voice input.");
+        }
+    }
+}
+
+// Speak a question
+function speak(text) {
+    return new Promise(resolve => {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.onend = resolve;
+        speechSynthesis.speak(utterance);
+    });
+}
+
+// Listen for user's voice input
+function listen() {
+    return new Promise((resolve, reject) => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.onresult = (event) => resolve(event.results[0][0].transcript);
+        recognition.onerror = (event) => reject(event.error);
+        recognition.start();
+    });
+}
+
+// AI fill form function
+async function aiFillForm() {
+    await requestMicPermission();
+
+    const fields = [
+        {id: 'patientName', question: 'Please tell me your full name'},
+        {id: 'patientPhone', question: 'Please tell me your phone number'},
+        {id: 'patientEmail', question: 'Please tell me your email address'},
+        {id: 'appointmentDate', question: 'Please tell me your preferred appointment date in YYYY-MM-DD format'},
+        {id: 'appointmentTime', question: 'Please tell me your preferred appointment time in HH:MM format'},
+        {id: 'patientAge', question: 'Please tell me your age'},
+        {id: 'patientGender', question: 'Please tell me your gender'},
+        {id: 'appointmentReason', question: 'Please tell me the reason for your visit'}
+    ];
+
+    for(const field of fields) {
+        await speak(field.question);
+        try {
+            const answer = await listen();
+            document.getElementById(field.id).value = answer;
+        } catch(err) {
+            console.log('Error listening: ', err);
+        }
+    }
+
+    updateAppointmentSummary();
+}
+
+// Update summary
+function updateAppointmentSummary(){
+    const date=document.getElementById('appointmentDate').value;
+    const time=document.getElementById('appointmentTime').value;
+    const doctorName=document.getElementById('doctorName').textContent;
+    if(date && time){
+        const summaryDiv=document.getElementById('appointmentSummary');
+        document.getElementById('summaryDoctor').textContent=doctorName;
+        document.getElementById('summaryDate').textContent=formatDate(date);
+        document.getElementById('summaryTime').textContent=formatTime(time);
+        summaryDiv.classList.remove('hidden');
+    }
+}
+
+function formatDate(dateString){
+    const options={ weekday:'long', year:'numeric', month:'long', day:'numeric'};
+    return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+function formatTime(timeString){
+    const [hours, minutes]=timeString.split(':'); const hour=parseInt(hours);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour}:${minutes} ${ampm}`;
+}
+
+// Form submission
+document.getElementById('appointmentForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    submitAppointment();
+});
+
+function submitAppointment(){
+    const submitBtn=document.getElementById('submitBtn');
+    const loadingSpinner=document.getElementById('loadingSpinner');
+    submitBtn.disabled=true;
+    loadingSpinner.classList.remove('hidden');
+
+    setTimeout(()=>{
+        loadingSpinner.classList.add('hidden');
+        const isSuccess=Math.random()>0.2;
+        if(isSuccess){
+            showConfirmation();
+            document.getElementById('appointmentForm').reset();
+            document.getElementById('appointmentSummary').classList.add('hidden');
+        } else showError();
+        submitBtn.disabled=false;
+    }, 2000);
+}
+
+function showConfirmation(){
+    const confirmationMessage=document.getElementById('confirmationMessage');
+    const errorMessage=document.getElementById('errorMessage');
+    errorMessage.classList.add('hidden');
+    confirmationMessage.classList.remove('hidden');
+    window.scrollTo(0,0);
+    setTimeout(()=>{ confirmationMessage.classList.add('hidden'); },5000);
+}
+
+function showError(){
+    const confirmationMessage=document.getElementById('confirmationMessage');
+    const errorMessage=document.getElementById('errorMessage');
+    confirmationMessage.classList.add('hidden');
+    errorMessage.classList.remove('hidden');
+    window.scrollTo(0,0);
+    setTimeout(()=>{ errorMessage.classList.add('hidden'); },5000);
+}
+
+// AI button listener
+document.getElementById('aiFillBtn').addEventListener('click', aiFillForm);
+
+// Initialize doctor info
+document.addEventListener('DOMContentLoaded', function() {
+    const doctorData = localStorage.getItem('selectedDoctor');
+    if(doctorData){
+        const doctor = JSON.parse(doctorData);
+        document.getElementById('doctorAvatar').textContent = doctor.avatar || 'DR';
+        document.getElementById('doctorName').textContent = doctor.name;
+        document.getElementById('doctorSpecialty').textContent = doctor.specialty;
+        document.getElementById('doctorQualifications').textContent = doctor.qualifications;
+        document.getElementById('doctorReviews').textContent = doctor.reviews;
+        document.getElementById('doctorExperience').textContent = doctor.experience;
+        document.getElementById('doctorSatisfaction').textContent = doctor.satisfaction;
+        document.getElementById('doctorLocation').textContent = doctor.location;
+        document.title = `Book with ${doctor.name} - Zariya`;
+    }
+
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('appointmentDate').min = today;
+});
+</script>
+
+</body>
+</html>

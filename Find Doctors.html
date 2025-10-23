@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Find Doctors - Zariya</title>
+</head>
+<body>
+<div class="flex justify-end p-4">
+  <a href="index.html" class="bg-indigo-600 text-white px-4 py-2 hover:bg-indigo-700 transition-all">
+    Back to Home
+  </a>
+</div>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-5xl font-serif font-medium text-black">Find The Best Doctors Near You</h1>
+        </div>
+
+        <div class="border border-gray-300 rounded-2xl p-4 bg-white shadow-sm">
+  <div class="flex flex-wrap gap-3">
+    <span class="filter-tag active cursor-pointer bg-blue-600 text-white px-3 py-1 rounded-full" data-category="all">All Specialists</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="dermatologist">Dermatologist</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="gynecologist">Gynecologist</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="urologist">Urologist</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="gastroenterologist">Gastroenterologist</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="general">General Practitioner</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="psychiatrist">Psychiatrist</span>
+    <span class="filter-tag cursor-pointer border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-100" data-category="pediatrician">Pediatrician</span>
+  </div>
+</div>
+
+
+        <!-- Dermatologist Section -->
+        <!-- <div class="category-section" data-category="dermatologist">
+            <div class="category-header">
+                <div class="category-icon">🔬</div>
+                <h2 class="category-title">Dermatologist</h2>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-avatar">DA</div>
+                        <div class="doctor-info-main">
+                            <h3 class="doctor-name">Dr. Fawad Hussain</h3>
+                            <div class="doctor-verified">PMDC Verified</div>
+                            <p class="doctor-specialty">Dermatologist</p>
+                            <p class="doctor-qualifications">MBBS, FCPS</p>
+                        </div>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-detail-item">
+                            <strong>Reviews</strong> 127
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Experience</strong> 17 years
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Satisfaction</strong> 96%
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Location</strong> Chugtai Lab, Main Satellite Town, Sargodha
+                        </div>
+                    </div>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-avatar">MS</div>
+                        <div class="doctor-info-main">
+                            <h3 class="doctor-name">Dr. Umar Mushtaq</h3>
+                            <div class="doctor-verified">PMDC Verified</div>
+                            <p class="doctor-specialty">Dermatologist</p>
+                            <p class="doctor-qualifications">MBBS, FCPS</p>
+                        </div>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-detail-item">
+                            <strong>Reviews</strong> 7,866
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Experience</strong> 17 years
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Satisfaction</strong> 96%
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Location</strong> Chugtai Medical Center
+                        </div>
+                    </div>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-avatar">LM</div>
+                        <div class="doctor-info-main">
+                            <h3 class="doctor-name">Dr. Muhammad Amjad</h3>
+                            <div class="doctor-verified">PMDC Verified</div>
+                            <p class="doctor-specialty">Dermatologist</p>
+                            <p class="doctor-qualifications">MBBS, FCPS</p>
+                        </div>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-detail-item">
+                            <strong>Reviews</strong> 2,103
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Experience</strong> 35 years
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Satisfaction</strong> 96%
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Location</strong> MedEast Medical Center
+                        </div>
+                    </div>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-avatar">JB</div>
+                        <div class="doctor-info-main">
+                            <h3 class="doctor-name">Asst. Prof. Dr. Sana Younas</h3>
+                            <div class="doctor-verified">PMDC Verified</div>
+                            <p class="doctor-specialty">Dermatologist</p>
+                            <p class="doctor-qualifications">MBBS, FCPS</p>
+                        </div>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-detail-item">
+                            <strong>Reviews</strong> 84
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Experience</strong> 10 years
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Satisfaction</strong> 93%
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Location</strong> Surgimed Hospital
+                        </div>
+                    </div>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-avatar">EW</div>
+                        <div class="doctor-info-main">
+                            <h3 class="doctor-name">Dr. Munashra Anam</h3>
+                            <div class="doctor-verified">PMDC Verified</div>
+                            <p class="doctor-specialty">Dermatologist</p>
+                            <p class="doctor-qualifications">MBBS, FCPS</p>
+                        </div>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-detail-item">
+                            <strong>Reviews</strong> 112
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Experience</strong> 8 years
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Satisfaction</strong> 96%
+                        </div>
+                        <div class="doctor-detail-item">
+                            <strong>Location</strong> Sargodha
+                        </div>
+                    </div>
+                    <button class="book-btn">Book Appointment</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Dermatologist Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">🧴</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Dermatologist</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            DA
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Fawad Hussain</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Dermatologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 127</p>
+          <p><strong>Experience:</strong> 17 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Chugtai Lab, Main Satellite Town, Sargodha</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-indigo-600 text-white font-semibold  hover:bg-indigo-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card2-->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            MS
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold ">Dr. Umar Mushtaq</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Dermatologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm ">
+          <p><strong>Reviews:</strong> 7,866</p>
+          <p><strong>Experience:</strong> 17 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Chugtai Medical Center</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            LM
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Muhammad Amjad</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Dermatologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm ">
+          <p><strong>Reviews:</strong> 2,103</p>
+          <p><strong>Experience:</strong> 35 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> MedEast Medical Center</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+       <!-- Gynecologist Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">👩‍⚕️</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Gynecologist</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Card1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            MQ
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Musarrat Qureshi</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gynecologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 916</p>
+          <p><strong>Experience:</strong> 9 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Sargodha</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-pink-600 text-white font-semibold shadow-md hover:bg-pink-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            AJ
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Asma Jabeen</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gynecologist</p>
+            <p class="text-gray-500 text-sm">MBBS, MCPS (Obstetrics & Gynecology)</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 2,368</p>
+          <p><strong>Experience:</strong> 26 years</p>
+          <p><strong>Satisfaction:</strong> 93%</p>
+          <p><strong>Location:</strong> Sargodha</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-pink-600 text-white font-semibold hover:bg-pink-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            SJ
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Asst. Prof. Dr. Maria Anwar</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gynecologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 198</p>
+          <p><strong>Experience:</strong> 11 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Maria Khalil Hospital</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-pink-600 text-white font-semibold hover:bg-pink-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Urologist Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">🔬</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Urologist</h2>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Card 1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            RT
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Prof. Dr. Muhammad Farooq</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Urologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 5,178</p>
+          <p><strong>Experience:</strong> 40 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Punjab Medical Center</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-orange-600 text-white font-semibold shadow-md hover:bg-orange-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            DH
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Prof. Dr. Fawad Nasrullah</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Urologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 1,192</p>
+          <p><strong>Experience:</strong> 28 years</p>
+          <p><strong>Satisfaction:</strong> 93%</p>
+          <p><strong>Location:</strong> Chughtai Medical Center Johar Town</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-orange-600 text-white font-semibold hover:bg-orange-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            AB
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Prof. Dr. Khizer Hayat Gondal</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Urologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 603</p>
+          <p><strong>Experience:</strong> 26 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Doctors Hospital</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-orange-600 text-white font-semibold hover:bg-orange-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Gastroenterologist Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">🩺</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Gastroenterologist</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500 ">
+        <div class="flex items-center gap-6">
+          <div class="w-24 h-24 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-3xl">
+            KD
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Shafiq Awan</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gastroenterologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm ">
+          <p><strong>Reviews:</strong> 964</p>
+          <p><strong>Experience:</strong> 17 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Tayyab Hospital</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-green-600 text-white font-semibold hover:bg-green-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-24 h-24 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-3xl">
+            TM
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Naeem Abbas Gilani</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gastroenterologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 328</p>
+          <p><strong>Experience:</strong> 9 years</p>
+          <p><strong>Satisfaction:</strong> 93%</p>
+          <p><strong>Location:</strong> Sadiq Hospital</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-green-600 text-white font-semibold hover:bg-green-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-24 h-24 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-3xl">
+            AG
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Assoc. Prof. Dr. Salman Javed</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Gastroenterologist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 3,189</p>
+          <p><strong>Experience:</strong> 17 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Health Avenue</p>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-green-600 text-white font-semibold hover:bg-green-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- General Practitioner Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">🩺</div>
+      <h2 class="text-2xl font-semibold text-gray-800">General Practitioner</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            PR
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Summyia Sadia</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">General Practitioner</p>
+            <p class="text-gray-500 text-sm">MBBS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 56</p>
+          <p><strong>Experience:</strong> 15 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> University Medical Centre And Research Centre</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-red-600 text-white font-semibold hover:bg-red-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            MA
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Ikram Mahmood</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">General Practitioner</p>
+            <p class="text-gray-500 text-sm">MBBS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 7</p>
+          <p><strong>Experience:</strong> 27 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Sargodha</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-red-600 text-white font-semibold hover:bg-red-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            ST
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Mumtaz Niazi</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">General Practitioner</p>
+            <p class="text-gray-500 text-sm">MBBS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 3</p>
+          <p><strong>Experience:</strong> 12 years</p>
+          <p><strong>Satisfaction:</strong> 93%</p>
+          <p><strong>Location:</strong> Bin Qasim Hospital</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-red-600 text-white font-semibold hover:bg-red-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+        <!-- Psychiatrist Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">🧠</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Psychiatrist</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            RW
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Asst. Prof. Dr. Naseem Chaudhry</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Psychiatrist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 2,178</p>
+          <p><strong>Experience:</strong> 35 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Care Life Clinic</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            DR
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Huma Aslam</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Psychiatrist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 1,524</p>
+          <p><strong>Experience:</strong> 15 years</p>
+          <p><strong>Satisfaction:</strong> 93%</p>
+          <p><strong>Location:</strong> Sargodha</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            AL
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Junaid Rasool</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Psychiatrist</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 1,398</p>
+          <p><strong>Experience:</strong> 12 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> The Fairway Clinic</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pediatrician Section -->
+<section class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-8 border-b pb-3">
+      <div class="text-3xl">👶</div>
+      <h2 class="text-2xl font-semibold text-gray-800">Pediatrician</h2>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card1 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            CJ
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Sarwar Chaudhary</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Pediatrician</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 330</p>
+          <p><strong>Experience:</strong> 40 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Sargodha</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            PM
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Asst. Prof. Dr. Khurram Nawaz Warraich</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Pediatrician</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 156</p>
+          <p><strong>Experience:</strong> 20 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Central Hospital</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div class="transition-all duration-300 p-8 border border-gray-500 ">
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold text-2xl">
+            SF
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Dr. Muhammad Bilal Sharif</h3>
+            <p class="text-sm text-green-600 font-medium">PMDC Verified</p>
+            <p class="text-gray-600 text-sm">Pediatrician</p>
+            <p class="text-gray-500 text-sm">MBBS, FCPS</p>
+          </div>
+        </div>
+        <div class="mt-5 space-y-1 text-sm">
+          <p><strong>Reviews:</strong> 37</p>
+          <p><strong>Experience:</strong> 9 years</p>
+          <p><strong>Satisfaction:</strong> 96%</p>
+          <p><strong>Location:</strong> Saleem Hospital</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="w-full py-3 text-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+</div>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Filter function
+        function filterCategory(category) {
+            // Remove active class from all filter tags
+            document.querySelectorAll('.filter-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            
+            // Add active class to clicked tag
+            event.target.classList.add('active');
+            
+            // Show/hide categories based on selection
+            const categorySections = document.querySelectorAll('.category-section');
+            
+            if (category === 'all') {
+                categorySections.forEach(section => {
+                    section.style.display = 'block';
+                });
+            } else {
+                categorySections.forEach(section => {
+                    if (section.getAttribute('data-category') === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Initialize filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to filter tags
+            document.querySelectorAll('.filter-tag').forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterCategory(category);
+                });
+            });
+            
+            // Check for URL parameter and filter accordingly
+            const specialty = getUrlParameter('specialty');
+            if (specialty) {
+                // Find and click the corresponding filter tag
+                const targetTag = document.querySelector(`.filter-tag[data-category="${specialty}"]`);
+                if (targetTag) {
+                    targetTag.click();
+                }
+            } else {
+                // Set initial state to show all categories
+                filterCategory('all');
+            }
+        });
+       // Add this to your existing JavaScript in Find Doctors.html
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to all book buttons
+    document.querySelectorAll('.book-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const doctorCard = this.closest('.doctor-card');
+            const doctorName = doctorCard.querySelector('.doctor-name').textContent;
+            const doctorSpecialty = doctorCard.querySelector('.doctor-specialty').textContent;
+            const doctorQualifications = doctorCard.querySelector('.doctor-qualifications').textContent;
+            
+            // Get all doctor details
+            const doctorDetails = {
+                name: doctorName,
+                specialty: doctorSpecialty,
+                qualifications: doctorQualifications,
+                reviews: doctorCard.querySelector('.doctor-detail-item:nth-child(1)').textContent.replace('Reviews', '').trim(),
+                experience: doctorCard.querySelector('.doctor-detail-item:nth-child(2)').textContent.replace('Experience', '').trim(),
+                satisfaction: doctorCard.querySelector('.doctor-detail-item:nth-child(3)').textContent.replace('Satisfaction', '').trim(),
+                location: doctorCard.querySelector('.doctor-detail-item:nth-child(4)').textContent.replace('Location', '').trim(),
+                avatar: doctorCard.querySelector('.doctor-avatar').textContent
+            };
+            
+            // Create a doctor ID from the name
+            const doctorId = doctorName.toLowerCase()
+                .replace(/dr\.?/g, '')
+                .replace(/prof\.?/g, '')
+                .replace(/asst\.?/g, '')
+                .replace(/assoc\.?/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/[^a-z0-9-]/g, '')
+                .trim();
+            
+            // Store doctor data in localStorage to pass to booking page
+            localStorage.setItem('selectedDoctor', JSON.stringify(doctorDetails));
+            
+            // Redirect to booking page with doctor ID
+            window.location.href = `book-appointment.html?doctor=${doctorId}`;
+        });
+    });
+});
+// Add this function to handle chatbot redirects
+function handleChatbotRecommendation() {
+    const recommendedSpecialty = localStorage.getItem('recommendedSpecialty');
+    
+    if (recommendedSpecialty) {
+        // Find and click the corresponding filter tag
+        const targetTag = document.querySelector(`.filter-tag[data-category="${recommendedSpecialty}"]`);
+        if (targetTag) {
+            targetTag.click();
+            
+            // Scroll to the specialty section
+            setTimeout(() => {
+                const targetSection = document.querySelector(`[data-category="${recommendedSpecialty}"]`);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Show a notification
+                    const specialtyName = targetTag.textContent.trim();
+                    alert(`🔍 Showing ${specialtyName}s based on your symptoms analysis`);
+                }
+            }, 500);
+            
+            // Clear the stored recommendation
+            localStorage.removeItem('recommendedSpecialty');
+        }
+    }
+}
+
+// Call this function in your existing DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing code...
+    
+    // Handle chatbot recommendations
+    handleChatbotRecommendation();
+});
+    </script>
+</body>
+</html>
